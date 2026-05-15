@@ -70,6 +70,7 @@ jobs:
         run: |
           source .venv/bin/activate
           safety check --json --output safety-report.json
+        continue-on-error: true  # safety check deprecated in safety>=3.0; pip-audit below is the gate
 
       - name: Run pip-audit
         run: |
