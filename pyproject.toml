@@ -206,6 +206,14 @@ skips = ["B101", "B601"]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
+exclude = [
+    ".claude",
+    ".git",
+    ".venv",
+    "venv",
+    "build",
+    "dist",
+]
 
 [tool.ruff.lint]
 select = [

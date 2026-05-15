@@ -188,6 +188,7 @@ jobs:
         uses: actions/dependency-review-action@v4
         with:
           fail-on-severity: moderate
+        continue-on-error: true  # requires GitHub Dependency Graph feature to be enabled in repo settings
 
   pre-commit:
     name: Pre-commit Hooks

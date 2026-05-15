@@ -2184,8 +2184,7 @@ async def get_network_topology(
     site_id: str,
     include_coordinates: bool = False,
 ) -> dict:
-    """
-    Retrieve complete network topology graph.
+    """Retrieve complete network topology graph.
 
     Fetches the network topology including all devices, clients, and their
     interconnections. Optionally includes position coordinates for visualization.
@@ -2205,8 +2204,7 @@ async def get_device_connections(
     site_id: str,
     device_id: str | None = None,
 ) -> list[dict]:
-    """
-    Get device interconnection details.
+    """Get device interconnection details.
 
     Retrieves detailed connection information for a specific device or all devices.
 
@@ -2225,8 +2223,7 @@ async def get_port_mappings(
     site_id: str,
     device_id: str,
 ) -> dict:
-    """
-    Get port-level connection mappings for a device.
+    """Get port-level connection mappings for a device.
 
     Retrieves detailed information about which ports are connected to which devices/clients.
 
@@ -2245,8 +2242,7 @@ async def export_topology(
     site_id: str,
     format: str,
 ) -> str:
-    """
-    Export network topology in various formats.
+    """Export network topology in various formats.
 
     Exports the network topology as JSON, GraphML (XML), or DOT (Graphviz) format.
 
@@ -2264,8 +2260,7 @@ async def export_topology(
 async def get_topology_statistics(
     site_id: str,
 ) -> dict:
-    """
-    Get network topology statistics.
+    """Get network topology statistics.
 
     Retrieves statistical summary of the network topology including device counts,
     client counts, connection counts, and network depth.

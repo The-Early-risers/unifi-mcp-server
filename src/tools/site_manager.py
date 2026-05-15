@@ -57,7 +57,6 @@ async def list_all_sites_aggregated(settings: Settings) -> list[dict[str, Any]]:
     Returns:
         List of sites with aggregated statistics
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info("Retrieving aggregated site list from Site Manager API")
 
@@ -83,7 +82,6 @@ async def get_internet_health(settings: Settings, site_id: str | None = None) ->
     Returns:
         Internet health metrics
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving internet health metrics (site_id={site_id})")
 
@@ -106,7 +104,6 @@ async def get_site_health_summary(
     Returns:
         Health summary
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving site health summary (site_id={site_id})")
 
@@ -132,7 +129,6 @@ async def get_cross_site_statistics(settings: Settings) -> dict[str, Any]:
     Returns:
         Cross-site statistics
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info("Retrieving cross-site statistics")
 
@@ -194,7 +190,6 @@ async def list_vantage_points(settings: Settings) -> list[dict[str, Any]]:
     Returns:
         List of Vantage Points
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info("Retrieving Vantage Points")
 
@@ -221,7 +216,6 @@ async def get_site_inventory(
     Returns:
         Site inventory or list of site inventories
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving site inventory (site_id={site_id})")
 
@@ -284,7 +278,6 @@ async def compare_site_performance(settings: Settings) -> dict[str, Any]:
     Returns:
         Performance comparison with rankings and metrics
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info("Comparing performance across sites")
 
@@ -393,7 +386,6 @@ async def search_across_sites(
     Returns:
         Search results with site context
     """
-
     valid_types = ["device", "client", "network", "all"]
     if search_type not in valid_types:
         raise ValueError(f"search_type must be one of {valid_types}, got '{search_type}'")
@@ -525,7 +517,6 @@ async def query_isp_metrics(
     Returns:
         List of ISP metrics matching the query
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Querying ISP metrics (site_id={site_id}, start={start_time}, end={end_time})")
 
@@ -551,7 +542,6 @@ async def list_sdwan_configs(settings: Settings) -> list[dict[str, Any]]:
     Returns:
         List of SD-WAN configurations
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info("Retrieving SD-WAN configurations")
 
@@ -575,7 +565,6 @@ async def get_sdwan_config(settings: Settings, config_id: str) -> dict[str, Any]
     Returns:
         SD-WAN configuration details
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving SD-WAN configuration: {config_id}")
 
@@ -596,7 +585,6 @@ async def get_sdwan_config_status(settings: Settings, config_id: str) -> dict[st
     Returns:
         SD-WAN configuration deployment status
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving SD-WAN configuration status: {config_id}")
 
@@ -621,7 +609,6 @@ async def list_hosts(
     Returns:
         List of managed hosts
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving hosts list (limit={limit}, offset={offset})")
 
@@ -645,7 +632,6 @@ async def get_host(settings: Settings, host_id: str) -> dict[str, Any]:
     Returns:
         Host details
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info(f"Retrieving host details: {host_id}")
 
@@ -666,7 +652,6 @@ async def get_version_control(settings: Settings) -> dict[str, Any]:
     Returns:
         Version control information including current, latest, and deprecated versions
     """
-
     async with SiteManagerClient(settings) as client:
         logger.info("Retrieving API version control information")
 
