@@ -46,6 +46,8 @@ async def create_network(
         dhcp_stop: DHCP range stop IP
         dhcp_dns_1: Primary DNS server
         dhcp_dns_2: Secondary DNS server
+        dhcp_dns_3: Tertiary DNS server
+        dhcp_dns_4: Quaternary DNS server
         domain_name: Domain name for DHCP
         confirm: Confirmation flag (must be True to execute)
         dry_run: If True, validate but don't create the network
@@ -190,6 +192,8 @@ async def update_network(
         dhcp_stop: New DHCP range stop IP
         dhcp_dns_1: New primary DNS server
         dhcp_dns_2: New secondary DNS server
+        dhcp_dns_3: New tertiary DNS server
+        dhcp_dns_4: New quaternary DNS server
         domain_name: New domain name
         confirm: Confirmation flag (must be True to execute)
         dry_run: If True, validate but don't update the network
