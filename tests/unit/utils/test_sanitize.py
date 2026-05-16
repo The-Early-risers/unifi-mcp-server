@@ -4,7 +4,6 @@ import os
 from unittest.mock import patch
 
 from src.utils.sanitize import (
-    SENSITIVE_FIELDS,
     _redact_value,
     is_production,
     sanitize_dict,
