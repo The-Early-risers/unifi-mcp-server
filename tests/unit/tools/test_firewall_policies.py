@@ -2369,9 +2369,9 @@ class TestGetZonePolicyMatrix:
             assert mock_client.get.call_count == 2
             call_urls = [str(c.args[0]) for c in mock_client.get.call_args_list]
             assert any("zones" in url for url in call_urls), "zones endpoint must be called"
-            assert any("firewall-policies" in url for url in call_urls), (
-                "policies endpoint must be called"
-            )
+            assert any(
+                "firewall-policies" in url for url in call_urls
+            ), "policies endpoint must be called"
 
     @pytest.mark.asyncio
     async def test_get_zone_policy_matrix_groups_by_zone_pair(

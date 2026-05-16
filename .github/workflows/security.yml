@@ -53,7 +53,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-          cache: 'pip'
 
       - name: Install uv
         run: |
@@ -75,8 +74,13 @@ jobs:
       - name: Run pip-audit
         run: |
           source .venv/bin/activate
-          pip install pip-audit
-          pip-audit --format json --output pip-audit-report.json
+          # pip-audit is already in dev deps (installed via uv above); using pip here
+          # would pull in py==1.11.0 via pip's resolver, introducing PYSEC-2022-42969.
+          # PYSEC-2022-42969 / CVE-2022-42969: ReDoS in py's SVN info parsing.
+          # No fix version exists; py is unmaintained. This project does not use SVN,
+          # so the vulnerability is not exploitable here.
+          pip-audit --format json --output pip-audit-report.json \
+            --ignore-vuln PYSEC-2022-42969
 
       - name: Upload Safety report
         uses: actions/upload-artifact@v4
