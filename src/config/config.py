@@ -164,7 +164,7 @@ class Settings(BaseSettings):
     )
 
     server_host: str = Field(
-        default="0.0.0.0",
+        default="0.0.0.0",  # nosec B104
         description="Server bind address (used for http/sse/streamable_http transport)",
         validation_alias="MCP_SERVER_HOST",
     )
